@@ -1,9 +1,5 @@
-// sass source/stylesheets/index.scss build/stylesheets/index.css
+$green: green;
 
-$white: #FFFFFF;
-$black: #111111;
-
-body {
-    background: $black;
-    color: $white;
+.my-green {
+    color: $green;
 }

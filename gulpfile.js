@@ -7,11 +7,25 @@ gulp.task('default', function() {
     console.log("Gulp Working");
 });
 
+gulp.task('tailwind', function (done) { 
+    const postcss = require('gulp-postcss')
+    return gulp.src('assets/scss/app.scss')
+    .pipe(postcss([
+        // ...
+        require('tailwindcss'),
+        require('autoprefixer'),
+        // ...
+    ]))
+    // ...
+    .pipe(gulp.dest('assets/tailwind/'))
+    done();
+});
+
 gulp.task('sass', function (done) { 
     /*
     The file in gulp.src will be converted, you can also select all .scss files in a directory by using “app/scss/*.scss”. This will select all your .scss files in the folder scss.
     */
-    gulp.src('assets/scss/main.scss') 
+    gulp.src('assets/scss/master.scss') 
     .pipe(sass().on('error', sass.logError)) 
     /*
     The gulp.dest is the output. The output will be stored in the CSS folder inside the app folder.
