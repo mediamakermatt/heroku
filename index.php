@@ -1,1 +1,1 @@
-<? echo "Hello World" ?>
+<? include('../../../heroku/index.php'); ?>
