@@ -2,36 +2,36 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var cleanCSS = require('gulp-clean-css');
 
-gulp.task('default', function() {
+gulp.task('default', (done) => {
     console.log("Gulp Working");
+    done();
 });
 
-gulp.task('tailwind', function (done) { 
+gulp.task('tailwind', (done) => {
     const postcss = require('gulp-postcss')
     return gulp.src('assets/scss/app.scss')
     .pipe(postcss([
-        // ...
         require('tailwindcss'),
         require('autoprefixer'),
-        // ...
     ]))
-    // ...
     .pipe(gulp.dest('assets/tailwind/'))
     done();
 });
 
-gulp.task('sass', function (done) { 
-    /*
-    The file in gulp.src will be converted, you can also select all .scss files in a directory by using “app/scss/*.scss”. This will select all your .scss files in the folder scss.
-    */
+gulp.task('styles', (done) => {
+    // compile all scss into css
     gulp.src('assets/scss/master.scss') 
     .pipe(sass().on('error', sass.logError)) 
-    /*
-    The gulp.dest is the output. The output will be stored in the CSS folder inside the app folder.
-    */
-    .pipe(gulp.dest('assets/css/')); 
-    done();
+    .pipe(gulp.dest('assets/css/'))
+    // minify all css
+    .on('end', function () { 
+        return gulp.src('assets/css/*.css')
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('assets/css/'));
+    });
+    done(); 
 });
 
 // /*
