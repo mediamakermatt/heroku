@@ -1,1 +1,10 @@
-<? include('../../../heroku/index.php'); ?>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+The content of the document......sadasd
+</body>
+
+</html>
