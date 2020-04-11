@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>Title of the document</title>
-</head>
-
-<body>
-The content of the document......sadasd
-</body>
-
+    <head>
+        <title>MediaMakerMatt</title>
+        <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    </head>
+    <body>
+        <?php include('pages/home.php'); ?>
+    </body>
 </html>

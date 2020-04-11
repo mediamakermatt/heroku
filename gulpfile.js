@@ -16,7 +16,7 @@ gulp.task('sass', function (done) {
     /*
     The gulp.dest is the output. The output will be stored in the CSS folder inside the app folder.
     */
-    .pipe(gulp.dest('assets/css/main.css')); 
+    .pipe(gulp.dest('assets/css/')); 
     done();
 });
 

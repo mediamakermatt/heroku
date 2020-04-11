@@ -1,12 +1,9 @@
 // sass source/stylesheets/index.scss build/stylesheets/index.css
 
-$green: green;
-$red: red;
+$white: #FFFFFF;
+$black: #111111;
 
-.green { 
-    color: $green; 
-}
-
-.red { 
-    color: $red; 
+body {
+    background: $black;
+    color: $white;
 }
